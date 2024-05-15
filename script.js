@@ -9,6 +9,10 @@ let keyword = '';
 let page = 1;
 
 async function searchImages() {
+    // Clear previous search result
+    searchResult.innerHTML = '';
+    showMoreBtn.style.display = 'none';
+    
     keyword = searchBox.value;
     const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=12`;
 
